@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    height: 75px;
+
+    background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 25px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* LOGO */
+.logo {
+    color: #f8fafc;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+/* DESKTOP MENU */
+.desktop-menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+.desktop-menu li {
+    position: relative;
+}
+
+.desktop-menu a,
+.dropdown-btn {
+    color: #f8fafc;
+
+    text-decoration: none;
+
+    background: transparent;
+    border: none;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    padding: 8px 0;
+}
+
+.desktop-menu a:hover,
+.dropdown-btn:hover {
+    color: #38bdf8;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    background: white;
+
+    min-width: 220px;
+
+    border-radius: 12px;
+
+    list-style: none;
+
+    padding: 10px 0;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: 0.3s;
+
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+
+    padding: 14px 20px;
+
+    color: #0f172a;
+
+    transition: 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+
+    color: white;
+}
+
+/* MENU BUTTON */
+.menu-btn {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* DRAWER */
+.drawer {
+    position: fixed;
+
+    top: 0;
+    left: -320px;
+
+    width: 300px;
+    height: 100vh;
+
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+
+    transition: 0.3s ease;
+
+    z-index: 1000;
+
+    padding: 20px;
+
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.drawer.open {
+    left: 0;
+}
+
+/* DRAWER TOP */
+.drawer-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+
+    color: white;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+    list-style: none;
+}
+
+.mobile-menu li {
+    margin-bottom: 12px;
+}
+
+.mobile-menu a,
+.mobile-dropdown-btn {
+    display: block;
+
+    width: 100%;
+
+    text-align: left;
+
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #f8fafc;
+
+    border: none;
+
+    padding: 15px 18px;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* MOBILE HOVER */
+.mobile-menu a:hover,
+.mobile-dropdown-btn:hover {
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+
+    transform: translateX(5px);
+}
+
+/* MOBILE DROPDOWN */
+.mobile-dropdown {
+    list-style: none;
+
+    margin-top: 10px;
+
+    padding-left: 10px;
+
+    display: none;
+}
+
+.mobile-dropdown.open {
+    display: block;
+}
+
+.mobile-dropdown li {
+    margin-bottom: 10px;
+}
+
+.mobile-dropdown li a {
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #cbd5e1;
+
+    font-size: 15px;
+}
+
+.mobile-dropdown li a:hover {
+    background: #7c3aed;
+
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        flex-direction: row-reverse;
+        /* LOGO RIGHT */
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+}
